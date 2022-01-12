@@ -13,6 +13,11 @@
 		1DE4E5CC270A5CCE004A30CA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1DE4E5CA270A5CCE004A30CA /* Main.storyboard */; };
 		1DE4E5CE270A5CD0004A30CA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1DE4E5CD270A5CD0004A30CA /* Assets.xcassets */; };
 		1DE4E5D1270A5CD0004A30CA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1DE4E5CF270A5CD0004A30CA /* LaunchScreen.storyboard */; };
+		30134CF12721AF7900D12C7E /* RegistrationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30134CF02721AF7900D12C7E /* RegistrationController.swift */; };
+		30440D32278EF8B800801DDD /* VioletUIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30440D31278EF8B800801DDD /* VioletUIButton.swift */; };
+		30440D34278F31D100801DDD /* PrettyTextWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30440D33278F31D100801DDD /* PrettyTextWrapper.swift */; };
+		30440D37278F3C0B00801DDD /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30440D36278F3C0B00801DDD /* LoginViewController.swift */; };
+		30EB5DAC2726CE6E0053199D /* VioletTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30EB5DAB2726CE6E0053199D /* VioletTextField.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +29,11 @@
 		1DE4E5CD270A5CD0004A30CA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1DE4E5D0270A5CD0004A30CA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1DE4E5D2270A5CD0004A30CA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		30134CF02721AF7900D12C7E /* RegistrationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationController.swift; sourceTree = "<group>"; };
+		30440D31278EF8B800801DDD /* VioletUIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VioletUIButton.swift; sourceTree = "<group>"; };
+		30440D33278F31D100801DDD /* PrettyTextWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrettyTextWrapper.swift; sourceTree = "<group>"; };
+		30440D36278F3C0B00801DDD /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		30EB5DAB2726CE6E0053199D /* VioletTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VioletTextField.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +66,68 @@
 		1DE4E5C3270A5CCE004A30CA /* fefuactivity */ = {
 			isa = PBXGroup;
 			children = (
+				30CBC6C927245DB700056E0E /* Views */,
 				1DE4E5C4270A5CCE004A30CA /* AppDelegate.swift */,
 				1DE4E5C6270A5CCE004A30CA /* SceneDelegate.swift */,
-				1DE4E5C8270A5CCE004A30CA /* ViewController.swift */,
 				1DE4E5CA270A5CCE004A30CA /* Main.storyboard */,
 				1DE4E5CD270A5CD0004A30CA /* Assets.xcassets */,
 				1DE4E5CF270A5CD0004A30CA /* LaunchScreen.storyboard */,
 				1DE4E5D2270A5CD0004A30CA /* Info.plist */,
+				30440D33278F31D100801DDD /* PrettyTextWrapper.swift */,
 			);
 			path = fefuactivity;
+			sourceTree = "<group>";
+		};
+		30440D35278F3BE100801DDD /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				30440D38278F3C1C00801DDD /* Elements */,
+				30440D36278F3C0B00801DDD /* LoginViewController.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		30440D38278F3C1C00801DDD /* Elements */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Elements;
+			sourceTree = "<group>";
+		};
+		30CBC6C927245DB700056E0E /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				30440D35278F3BE100801DDD /* Login */,
+				30CBC6CC2724600200056E0E /* Registration */,
+				30CBC6CA27245FDA00056E0E /* WelcomeView */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		30CBC6CA27245FDA00056E0E /* WelcomeView */ = {
+			isa = PBXGroup;
+			children = (
+				1DE4E5C8270A5CCE004A30CA /* ViewController.swift */,
+			);
+			path = WelcomeView;
+			sourceTree = "<group>";
+		};
+		30CBC6CB27245FF900056E0E /* Elements */ = {
+			isa = PBXGroup;
+			children = (
+				30EB5DAB2726CE6E0053199D /* VioletTextField.swift */,
+				30440D31278EF8B800801DDD /* VioletUIButton.swift */,
+			);
+			path = Elements;
+			sourceTree = "<group>";
+		};
+		30CBC6CC2724600200056E0E /* Registration */ = {
+			isa = PBXGroup;
+			children = (
+				30134CF02721AF7900D12C7E /* RegistrationController.swift */,
+				30CBC6CB27245FF900056E0E /* Elements */,
+			);
+			path = Registration;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,8 +200,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				30440D32278EF8B800801DDD /* VioletUIButton.swift in Sources */,
 				1DE4E5C9270A5CCE004A30CA /* ViewController.swift in Sources */,
 				1DE4E5C5270A5CCE004A30CA /* AppDelegate.swift in Sources */,
+				30440D34278F31D100801DDD /* PrettyTextWrapper.swift in Sources */,
+				30440D37278F3C0B00801DDD /* LoginViewController.swift in Sources */,
+				30134CF12721AF7900D12C7E /* RegistrationController.swift in Sources */,
+				30EB5DAC2726CE6E0053199D /* VioletTextField.swift in Sources */,
 				1DE4E5C7270A5CCE004A30CA /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -294,7 +362,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = co.feip.fefuactivity;
+				PRODUCT_BUNDLE_IDENTIFIER = ban.romaOkorosso.fefuactivity;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -314,7 +382,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = co.feip.fefuactivity;
+				PRODUCT_BUNDLE_IDENTIFIER = ban.romaOkorosso.fefuactivity;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
