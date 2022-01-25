@@ -17,7 +17,10 @@
 		30440D32278EF8B800801DDD /* VioletUIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30440D31278EF8B800801DDD /* VioletUIButton.swift */; };
 		30440D34278F31D100801DDD /* PrettyTextWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30440D33278F31D100801DDD /* PrettyTextWrapper.swift */; };
 		30440D37278F3C0B00801DDD /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30440D36278F3C0B00801DDD /* LoginViewController.swift */; };
+		3099F6172799AACC00F22796 /* MainTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3099F6142799AACC00F22796 /* MainTabBar.swift */; };
+		3099F6182799AACC00F22796 /* ActivityTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3099F6162799AACC00F22796 /* ActivityTab.swift */; };
 		30EB5DAC2726CE6E0053199D /* VioletTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30EB5DAB2726CE6E0053199D /* VioletTextField.swift */; };
+		30F78270279F8F9700E7F023 /* ActivityDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30F7826F279F8F9700E7F023 /* ActivityDetail.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,7 +36,10 @@
 		30440D31278EF8B800801DDD /* VioletUIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VioletUIButton.swift; sourceTree = "<group>"; };
 		30440D33278F31D100801DDD /* PrettyTextWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrettyTextWrapper.swift; sourceTree = "<group>"; };
 		30440D36278F3C0B00801DDD /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		3099F6142799AACC00F22796 /* MainTabBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTabBar.swift; sourceTree = "<group>"; };
+		3099F6162799AACC00F22796 /* ActivityTab.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityTab.swift; sourceTree = "<group>"; };
 		30EB5DAB2726CE6E0053199D /* VioletTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VioletTextField.swift; sourceTree = "<group>"; };
+		30F7826F279F8F9700E7F023 /* ActivityDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityDetail.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,22 +87,33 @@
 		30440D35278F3BE100801DDD /* Login */ = {
 			isa = PBXGroup;
 			children = (
-				30440D38278F3C1C00801DDD /* Elements */,
 				30440D36278F3C0B00801DDD /* LoginViewController.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
 		};
-		30440D38278F3C1C00801DDD /* Elements */ = {
+		3099F6132799AACC00F22796 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				3099F6142799AACC00F22796 /* MainTabBar.swift */,
+				3099F6152799AACC00F22796 /* Activity */,
+				30F7826F279F8F9700E7F023 /* ActivityDetail.swift */,
 			);
-			path = Elements;
+			path = Main;
+			sourceTree = "<group>";
+		};
+		3099F6152799AACC00F22796 /* Activity */ = {
+			isa = PBXGroup;
+			children = (
+				3099F6162799AACC00F22796 /* ActivityTab.swift */,
+			);
+			path = Activity;
 			sourceTree = "<group>";
 		};
 		30CBC6C927245DB700056E0E /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				3099F6132799AACC00F22796 /* Main */,
 				30440D35278F3BE100801DDD /* Login */,
 				30CBC6CC2724600200056E0E /* Registration */,
 				30CBC6CA27245FDA00056E0E /* WelcomeView */,
@@ -200,10 +217,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3099F6182799AACC00F22796 /* ActivityTab.swift in Sources */,
+				3099F6172799AACC00F22796 /* MainTabBar.swift in Sources */,
 				30440D32278EF8B800801DDD /* VioletUIButton.swift in Sources */,
 				1DE4E5C9270A5CCE004A30CA /* ViewController.swift in Sources */,
 				1DE4E5C5270A5CCE004A30CA /* AppDelegate.swift in Sources */,
 				30440D34278F31D100801DDD /* PrettyTextWrapper.swift in Sources */,
+				30F78270279F8F9700E7F023 /* ActivityDetail.swift in Sources */,
 				30440D37278F3C0B00801DDD /* LoginViewController.swift in Sources */,
 				30134CF12721AF7900D12C7E /* RegistrationController.swift in Sources */,
 				30EB5DAC2726CE6E0053199D /* VioletTextField.swift in Sources */,
@@ -357,7 +377,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4TAXLE7T2Y;
 				INFOPLIST_FILE = fefuactivity/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -377,7 +397,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4TAXLE7T2Y;
 				INFOPLIST_FILE = fefuactivity/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

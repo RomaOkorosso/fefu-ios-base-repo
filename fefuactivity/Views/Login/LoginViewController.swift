@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SwiftUI
 
 class LoginViewConstroller: UIViewController {
 
@@ -28,6 +29,7 @@ class LoginViewConstroller: UIViewController {
 
         let continueButton = VioletUIButton(text: "Продолжить")
         continueButton.translatesAutoresizingMaskIntoConstraints = false
+        continueButton.addTarget(self, action: #selector(self.continueBtnClicked), for: .touchUpInside)
 
         let peopleBicyclesImg = UIImage(named: "peopleBicycles")
         let imageView = UIImageView()
@@ -63,4 +65,16 @@ class LoginViewConstroller: UIViewController {
             imageView.trailingAnchor.constraint(equalTo: view.readableContentGuide.trailingAnchor, constant: 26),
         ])
     }
+    @IBAction func continueBtnClicked(sender: UIButton) {
+        let swiftUIView = MainTabBar()
+        let hosting = UIHostingController(rootView: swiftUIView)
+
+        guard let window = UIApplication.shared.keyWindow else { return }
+        window.rootViewController = hosting
+
+        UIView.transition(with: window, duration: 0.2, options: .curveEaseInOut) { }
+//        navigationController?.pushViewController(hosting, animated: true)
+    }
 }
+
+

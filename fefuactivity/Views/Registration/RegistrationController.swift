@@ -7,6 +7,7 @@
 
 import Foundation
 import UIKit
+import SwiftUI
 
 class RegController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate, UITextFieldDelegate {
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
@@ -91,7 +92,7 @@ class RegController: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
 
         let continueButton = VioletUIButton(text: "Продолжить")
         continueButton.translatesAutoresizingMaskIntoConstraints = false
-
+        continueButton.addTarget(self, action: #selector(self.continueBtnClicked), for: .touchUpInside)
 
         stackView.addArrangedSubview(loginTextField)
         stackView.addArrangedSubview(passwordTextField)
@@ -159,5 +160,16 @@ class RegController: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
 
     func textFieldDidChangeSelection(_ textField: UITextField) {
         textFieldForPicker.text = genders[self.genderPicker.selectedRow(inComponent: 0)]
+    }
+
+    @IBAction func continueBtnClicked(sender: UIButton) {
+        let swiftUIView = MainTabBar()
+        let host = UIHostingController(rootView: swiftUIView)
+
+        guard let window = UIApplication.shared.keyWindow else { return }
+        window.rootViewController = host
+
+        UIView.transition(with: window, duration: 0.2, options: .curveEaseInOut) { }
+//        navigationController?.pushViewController(hosting, animated: true)
     }
 }
