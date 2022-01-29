@@ -19,7 +19,14 @@
 		30440D37278F3C0B00801DDD /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30440D36278F3C0B00801DDD /* LoginViewController.swift */; };
 		3099F6172799AACC00F22796 /* MainTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3099F6142799AACC00F22796 /* MainTabBar.swift */; };
 		3099F6182799AACC00F22796 /* ActivityTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3099F6162799AACC00F22796 /* ActivityTab.swift */; };
+		30D4DE8E27A4E23900969C65 /* FEFUCoreDataContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D4DE8D27A4E23900969C65 /* FEFUCoreDataContainer.swift */; };
+		30D4DE9127A4E2C000969C65 /* fefuactivity.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 30D4DE8F27A4E2C000969C65 /* fefuactivity.xcdatamodeld */; };
+		30D4DE9327A4E37A00969C65 /* ActivityModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D4DE9227A4E37A00969C65 /* ActivityModel.swift */; };
+		30D4DE9627A4E41600969C65 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D4DE9527A4E41600969C65 /* Date.swift */; };
+		30D4DE9827A4E5A500969C65 /* CDActivity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D4DE9727A4E5A500969C65 /* CDActivity+CoreDataClass.swift */; };
+		30D4DE9A27A4E5C800969C65 /* CDActivity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D4DE9927A4E5C800969C65 /* CDActivity+CoreDataProperties.swift */; };
 		30EB5DAC2726CE6E0053199D /* VioletTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30EB5DAB2726CE6E0053199D /* VioletTextField.swift */; };
+		30ED67F327A189CA00584379 /* ActivityRecorderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30ED67F227A189CA00584379 /* ActivityRecorderView.swift */; };
 		30F78270279F8F9700E7F023 /* ActivityDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30F7826F279F8F9700E7F023 /* ActivityDetail.swift */; };
 /* End PBXBuildFile section */
 
@@ -38,7 +45,14 @@
 		30440D36278F3C0B00801DDD /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		3099F6142799AACC00F22796 /* MainTabBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTabBar.swift; sourceTree = "<group>"; };
 		3099F6162799AACC00F22796 /* ActivityTab.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityTab.swift; sourceTree = "<group>"; };
+		30D4DE8D27A4E23900969C65 /* FEFUCoreDataContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FEFUCoreDataContainer.swift; sourceTree = "<group>"; };
+		30D4DE9027A4E2C000969C65 /* fefuactivity.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = fefuactivity.xcdatamodel; sourceTree = "<group>"; };
+		30D4DE9227A4E37A00969C65 /* ActivityModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityModel.swift; sourceTree = "<group>"; };
+		30D4DE9527A4E41600969C65 /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
+		30D4DE9727A4E5A500969C65 /* CDActivity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDActivity+CoreDataClass.swift"; sourceTree = "<group>"; };
+		30D4DE9927A4E5C800969C65 /* CDActivity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDActivity+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		30EB5DAB2726CE6E0053199D /* VioletTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VioletTextField.swift; sourceTree = "<group>"; };
+		30ED67F227A189CA00584379 /* ActivityRecorderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityRecorderView.swift; sourceTree = "<group>"; };
 		30F7826F279F8F9700E7F023 /* ActivityDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityDetail.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -72,6 +86,9 @@
 		1DE4E5C3270A5CCE004A30CA /* fefuactivity */ = {
 			isa = PBXGroup;
 			children = (
+				30D4DE9427A4E3FD00969C65 /* Extensions */,
+				30D4DE8B27A4E1FC00969C65 /* Utils */,
+				30D4DE8827A4088A00969C65 /* Models */,
 				30CBC6C927245DB700056E0E /* Views */,
 				1DE4E5C4270A5CCE004A30CA /* AppDelegate.swift */,
 				1DE4E5C6270A5CCE004A30CA /* SceneDelegate.swift */,
@@ -80,6 +97,7 @@
 				1DE4E5CF270A5CD0004A30CA /* LaunchScreen.storyboard */,
 				1DE4E5D2270A5CD0004A30CA /* Info.plist */,
 				30440D33278F31D100801DDD /* PrettyTextWrapper.swift */,
+				30D4DE8F27A4E2C000969C65 /* fefuactivity.xcdatamodeld */,
 			);
 			path = fefuactivity;
 			sourceTree = "<group>";
@@ -95,6 +113,7 @@
 		3099F6132799AACC00F22796 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				30ED67F227A189CA00584379 /* ActivityRecorderView.swift */,
 				3099F6142799AACC00F22796 /* MainTabBar.swift */,
 				3099F6152799AACC00F22796 /* Activity */,
 				30F7826F279F8F9700E7F023 /* ActivityDetail.swift */,
@@ -145,6 +164,40 @@
 				30CBC6CB27245FF900056E0E /* Elements */,
 			);
 			path = Registration;
+			sourceTree = "<group>";
+		};
+		30D4DE8827A4088A00969C65 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				30D4DE9227A4E37A00969C65 /* ActivityModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		30D4DE8B27A4E1FC00969C65 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				30D4DE8C27A4E21A00969C65 /* CoreData+Helpers */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		30D4DE8C27A4E21A00969C65 /* CoreData+Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				30D4DE8D27A4E23900969C65 /* FEFUCoreDataContainer.swift */,
+				30D4DE9727A4E5A500969C65 /* CDActivity+CoreDataClass.swift */,
+				30D4DE9927A4E5C800969C65 /* CDActivity+CoreDataProperties.swift */,
+			);
+			path = "CoreData+Helpers";
+			sourceTree = "<group>";
+		};
+		30D4DE9427A4E3FD00969C65 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				30D4DE9527A4E41600969C65 /* Date.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -219,12 +272,19 @@
 			files = (
 				3099F6182799AACC00F22796 /* ActivityTab.swift in Sources */,
 				3099F6172799AACC00F22796 /* MainTabBar.swift in Sources */,
+				30D4DE9127A4E2C000969C65 /* fefuactivity.xcdatamodeld in Sources */,
+				30D4DE9627A4E41600969C65 /* Date.swift in Sources */,
 				30440D32278EF8B800801DDD /* VioletUIButton.swift in Sources */,
+				30D4DE9A27A4E5C800969C65 /* CDActivity+CoreDataProperties.swift in Sources */,
+				30ED67F327A189CA00584379 /* ActivityRecorderView.swift in Sources */,
+				30D4DE9327A4E37A00969C65 /* ActivityModel.swift in Sources */,
 				1DE4E5C9270A5CCE004A30CA /* ViewController.swift in Sources */,
 				1DE4E5C5270A5CCE004A30CA /* AppDelegate.swift in Sources */,
 				30440D34278F31D100801DDD /* PrettyTextWrapper.swift in Sources */,
 				30F78270279F8F9700E7F023 /* ActivityDetail.swift in Sources */,
+				30D4DE9827A4E5A500969C65 /* CDActivity+CoreDataClass.swift in Sources */,
 				30440D37278F3C0B00801DDD /* LoginViewController.swift in Sources */,
+				30D4DE8E27A4E23900969C65 /* FEFUCoreDataContainer.swift in Sources */,
 				30134CF12721AF7900D12C7E /* RegistrationController.swift in Sources */,
 				30EB5DAC2726CE6E0053199D /* VioletTextField.swift in Sources */,
 				1DE4E5C7270A5CCE004A30CA /* SceneDelegate.swift in Sources */,
@@ -375,7 +435,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 4TAXLE7T2Y;
+				DEVELOPMENT_TEAM = W9K99K5JN4;
 				INFOPLIST_FILE = fefuactivity/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -395,7 +455,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 4TAXLE7T2Y;
+				DEVELOPMENT_TEAM = W9K99K5JN4;
 				INFOPLIST_FILE = fefuactivity/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -431,6 +491,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		30D4DE8F27A4E2C000969C65 /* fefuactivity.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				30D4DE9027A4E2C000969C65 /* fefuactivity.xcdatamodel */,
+			);
+			currentVersion = 30D4DE9027A4E2C000969C65 /* fefuactivity.xcdatamodel */;
+			path = fefuactivity.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 1DE4E5B9270A5CCE004A30CA /* Project object */;
 }

@@ -67,6 +67,7 @@ class LoginViewConstroller: UIViewController {
     }
     @IBAction func continueBtnClicked(sender: UIButton) {
         let swiftUIView = MainTabBar()
+//        let swiftUIView = ActivityRecorderView()
         let hosting = UIHostingController(rootView: swiftUIView)
 
         guard let window = UIApplication.shared.keyWindow else { return }
