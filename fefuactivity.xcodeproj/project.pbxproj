@@ -25,6 +25,10 @@
 		30D4DE9627A4E41600969C65 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D4DE9527A4E41600969C65 /* Date.swift */; };
 		30D4DE9827A4E5A500969C65 /* CDActivity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D4DE9727A4E5A500969C65 /* CDActivity+CoreDataClass.swift */; };
 		30D4DE9A27A4E5C800969C65 /* CDActivity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D4DE9927A4E5C800969C65 /* CDActivity+CoreDataProperties.swift */; };
+		30D4DE9D27A5520700969C65 /* AuthModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D4DE9C27A5520700969C65 /* AuthModels.swift */; };
+		30D4DE9F27A5528600969C65 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D4DE9E27A5528600969C65 /* AuthService.swift */; };
+		30D4DEA127A552D500969C65 /* APIModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D4DEA027A552D500969C65 /* APIModels.swift */; };
+		30D4DEA327A5533600969C65 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D4DEA227A5533600969C65 /* APIService.swift */; };
 		30EB5DAC2726CE6E0053199D /* VioletTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30EB5DAB2726CE6E0053199D /* VioletTextField.swift */; };
 		30ED67F327A189CA00584379 /* ActivityRecorderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30ED67F227A189CA00584379 /* ActivityRecorderView.swift */; };
 		30F78270279F8F9700E7F023 /* ActivityDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30F7826F279F8F9700E7F023 /* ActivityDetail.swift */; };
@@ -51,6 +55,10 @@
 		30D4DE9527A4E41600969C65 /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 		30D4DE9727A4E5A500969C65 /* CDActivity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDActivity+CoreDataClass.swift"; sourceTree = "<group>"; };
 		30D4DE9927A4E5C800969C65 /* CDActivity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDActivity+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		30D4DE9C27A5520700969C65 /* AuthModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthModels.swift; sourceTree = "<group>"; };
+		30D4DE9E27A5528600969C65 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
+		30D4DEA027A552D500969C65 /* APIModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIModels.swift; sourceTree = "<group>"; };
+		30D4DEA227A5533600969C65 /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
 		30EB5DAB2726CE6E0053199D /* VioletTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VioletTextField.swift; sourceTree = "<group>"; };
 		30ED67F227A189CA00584379 /* ActivityRecorderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityRecorderView.swift; sourceTree = "<group>"; };
 		30F7826F279F8F9700E7F023 /* ActivityDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityDetail.swift; sourceTree = "<group>"; };
@@ -177,6 +185,7 @@
 		30D4DE8B27A4E1FC00969C65 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				30D4DE9B27A551EA00969C65 /* API */,
 				30D4DE8C27A4E21A00969C65 /* CoreData+Helpers */,
 			);
 			path = Utils;
@@ -198,6 +207,17 @@
 				30D4DE9527A4E41600969C65 /* Date.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		30D4DE9B27A551EA00969C65 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				30D4DE9C27A5520700969C65 /* AuthModels.swift */,
+				30D4DE9E27A5528600969C65 /* AuthService.swift */,
+				30D4DEA027A552D500969C65 /* APIModels.swift */,
+				30D4DEA227A5533600969C65 /* APIService.swift */,
+			);
+			path = API;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -273,10 +293,13 @@
 				3099F6182799AACC00F22796 /* ActivityTab.swift in Sources */,
 				3099F6172799AACC00F22796 /* MainTabBar.swift in Sources */,
 				30D4DE9127A4E2C000969C65 /* fefuactivity.xcdatamodeld in Sources */,
+				30D4DEA127A552D500969C65 /* APIModels.swift in Sources */,
+				30D4DEA327A5533600969C65 /* APIService.swift in Sources */,
 				30D4DE9627A4E41600969C65 /* Date.swift in Sources */,
 				30440D32278EF8B800801DDD /* VioletUIButton.swift in Sources */,
 				30D4DE9A27A4E5C800969C65 /* CDActivity+CoreDataProperties.swift in Sources */,
 				30ED67F327A189CA00584379 /* ActivityRecorderView.swift in Sources */,
+				30D4DE9F27A5528600969C65 /* AuthService.swift in Sources */,
 				30D4DE9327A4E37A00969C65 /* ActivityModel.swift in Sources */,
 				1DE4E5C9270A5CCE004A30CA /* ViewController.swift in Sources */,
 				1DE4E5C5270A5CCE004A30CA /* AppDelegate.swift in Sources */,
@@ -287,6 +310,7 @@
 				30D4DE8E27A4E23900969C65 /* FEFUCoreDataContainer.swift in Sources */,
 				30134CF12721AF7900D12C7E /* RegistrationController.swift in Sources */,
 				30EB5DAC2726CE6E0053199D /* VioletTextField.swift in Sources */,
+				30D4DE9D27A5520700969C65 /* AuthModels.swift in Sources */,
 				1DE4E5C7270A5CCE004A30CA /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

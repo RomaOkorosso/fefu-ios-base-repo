@@ -9,6 +9,8 @@ import UIKit
 import SwiftUI
 
 class LoginViewConstroller: UIViewController {
+    let loginTextField = VioletTextField()
+    let passwordTextField = VioletTextField(isSecure: true)
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,10 +23,7 @@ class LoginViewConstroller: UIViewController {
         stackView.distribution = .fill
         stackView.spacing = 8
 
-        let loginTextField = VioletTextField()
         loginTextField.placeholder = "Login"
-
-        let passwordTextField = VioletTextField(isSecure: true)
         passwordTextField.placeholder = "Password"
 
         let continueButton = VioletUIButton(text: "Продолжить")
@@ -66,15 +65,37 @@ class LoginViewConstroller: UIViewController {
         ])
     }
     @IBAction func continueBtnClicked(sender: UIButton) {
-        let swiftUIView = MainTabBar()
-//        let swiftUIView = ActivityRecorderView()
-        let hosting = UIHostingController(rootView: swiftUIView)
+        let login = self.loginTextField.text ?? ""
+        let password = self.passwordTextField.text ?? ""
 
-        guard let window = UIApplication.shared.keyWindow else { return }
-        window.rootViewController = hosting
+        let loginData = LoginRequestModel(login: login, password: password)
 
-        UIView.transition(with: window, duration: 0.2, options: .curveEaseInOut) { }
-//        navigationController?.pushViewController(hosting, animated: true)
+        do {
+            let data = try AuthService.encoder.encode(loginData)
+            AuthService.login(data) { auth in
+                DispatchQueue.main.async {
+                    UserDefaults.standard.set(auth.token, forKey: "token")
+
+                    let swiftUIView = MainTabBar()
+                    let hosting = UIHostingController(rootView: swiftUIView)
+
+                    guard let window = UIApplication.shared.keyWindow else { return }
+                    window.rootViewController = hosting
+
+                    UIView.transition(with: window, duration: 0.2, options: .curveEaseInOut) { }
+                }
+            } reject: { err in
+                DispatchQueue.main.async {
+                    let alertMessage = AuthService.errorMessage(error: err)
+                    let alert = UIAlertController(title: "Error",message:alertMessage, preferredStyle: .alert)
+                    alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"), style: .default))
+                    self.present(alert, animated: true, completion: nil)
+                    print(alertMessage)
+                }
+            }
+        } catch {
+            print(error)
+        }
     }
 }
 
