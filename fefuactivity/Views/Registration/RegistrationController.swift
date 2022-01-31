@@ -41,6 +41,11 @@ class RegController: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
 
     let genderPicker = UIPickerView()
 
+    let loginTextField = VioletTextField()
+    let passwordTextField = VioletTextField(isSecure: true)
+    let repeatPasswordTextField = VioletTextField(isSecure: true)
+    let nameTextField = VioletTextField()
+
     // MARK: end props-
 
 
@@ -56,20 +61,13 @@ class RegController: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
         stackView.distribution = .fill
         stackView.spacing = 8
 
-
-
-        let loginTextField = VioletTextField()
         loginTextField.placeholder = "Login"
-
-        let passwordTextField = VioletTextField(isSecure: true)
         passwordTextField.placeholder = "Password"
-
-        let repeatPasswordTextField = VioletTextField(isSecure: true)
         repeatPasswordTextField.placeholder = "Repeat password"
+
         passwordTextField.textContentType = .newPassword
         repeatPasswordTextField.textContentType = .newPassword
 
-        let nameTextField = VioletTextField()
         nameTextField.placeholder = "Name or nickname"
 
         genderPicker.dataSource = self
@@ -163,13 +161,48 @@ class RegController: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
     }
 
     @IBAction func continueBtnClicked(sender: UIButton) {
-        let swiftUIView = MainTabBar()
-        let host = UIHostingController(rootView: swiftUIView)
 
-        guard let window = UIApplication.shared.keyWindow else { return }
-        window.rootViewController = host
+        let login = loginTextField.text ?? ""
+        let name = nameTextField.text ?? ""
+        let password = passwordTextField.text ?? ""
+        let passwordConfirm = repeatPasswordTextField.text ?? ""
+        let gender = genders.firstIndex(of: textFieldForPicker.text ?? "Male") ?? 0
 
-        UIView.transition(with: window, duration: 0.2, options: .curveEaseInOut) { }
-//        navigationController?.pushViewController(hosting, animated: true)
+        if password != passwordConfirm {
+            let alertMessage = "Пароли не совпадают"
+            let alert = UIAlertController(title: "Error", message:alertMessage, preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"), style: .default))
+            self.present(alert, animated: true, completion: nil)
+            print(alertMessage)
+            return
+        }
+        let data = RegisterRequestModel(login: login, password: password, name: name, gender: gender)
+
+        do {
+            let reqBody = try AuthService.encoder.encode(data)
+            AuthService.register(reqBody) { user in
+                DispatchQueue.main.async {
+                    UserDefaults.standard.set(user.token, forKey: "token")
+
+                    let swiftUIView = MainTabBar()
+                    let host = UIHostingController(rootView: swiftUIView)
+
+                    guard let window = UIApplication.shared.keyWindow else { return }
+                    window.rootViewController = host
+
+                    UIView.transition(with: window, duration: 0.2, options: .curveEaseInOut) { }
+                }
+            } reject: { err in
+                DispatchQueue.main.async {
+                    let alertMessage = "Проверьте поля:\n" + AuthService.errorMessage(error: err)
+                    let alert = UIAlertController(title: "Error", message:alertMessage, preferredStyle: .alert)
+                    alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"), style: .default))
+                    self.present(alert, animated: true, completion: nil)
+                }
+            }
+        } catch {
+            print(error)
+        }
+        //        navigationController?.pushViewController(hosting, animated: true)
     }
 }
