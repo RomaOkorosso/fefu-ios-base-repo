@@ -2,13 +2,13 @@
 //  ActivityDetail.swift
 //  fefuactivity
 //
-//  Created by Roman Esin on 25.01.2022.
+//  Created by RomaOkorosso on 25.01.2022.
 //
 
 import SwiftUI
 
 struct ActivityDetail: View {
-    let item: Activity
+    let item: ActivityTableCellModel
     @State private var comment = ""
 
     var body: some View {
@@ -17,7 +17,8 @@ struct ActivityDetail: View {
                 Text(item.distance)
                     .font(.system(size: 24))
                     .bold()
-                Text(item.startDate)
+//                Text(DateComponentsFormatter().string(from: Calendar.current.dateComponents([.day, .month, .year], from: item.startDate))!)
+                Text(formatStringDate(date: item.startDate))
                     .font(.system(size: 16))
                     .foregroundColor(.gray)
                 Text(item.duration)
@@ -42,7 +43,8 @@ struct ActivityDetail: View {
                     .frame(width: 15, height: 15)
                     Text(item.type)
                     Spacer()
-                    Text(item.startDate)
+//                    Text(DateComponentsFormatter().string(from: Calendar.current.dateComponents([.day, .month, .year], from: item.startDate))!)
+                    Text(formatStringDate(date: item.startDate))
                         .font(.system(size: 16))
                         .foregroundColor(.gray)
                 }
@@ -81,6 +83,13 @@ struct ActivityDetail: View {
 
 struct ActivityDetail_Previews: PreviewProvider {
     static var previews: some View {
-        ActivityDetail(item: Activity.init(distance: "123 km", duration: "30 min", type: "Велосипед", startDate: "12.01.2022"))
+        ActivityDetail(item: .init(id: UUID(), distance: "123 km", duration: "30 min",
+                                           type: "Велосипед", startDate: Date(), endDate: Date()))
     }
+}
+
+func formatStringDate(date: Date) -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.setLocalizedDateFormatFromTemplate("MMMM d, yyyy")
+        return dateFormatter.string(from: date)
 }
